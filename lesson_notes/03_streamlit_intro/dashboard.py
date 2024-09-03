@@ -14,17 +14,18 @@ def read_data():
 def layout():
     df = read_data()
     # to fix streamlits comma for thousands
-    df_reset = df.reset_index(names=["year"]).style.format({"year": lambda x: f"{x}"})
+    df_reset = df.reset_index(names=["year"]).style.format({"year": lambda x: f"{x}"}) # f"{x:,}"}) detta retonerar X men utan komma
     st.markdown("# YH dashboard")
 
     st.markdown("This is a simple dashboard about yrkeshögskola")
+    st.markdown("Sara är bäst!")
 
     st.markdown("## Raw data")
     st.markdown("This data shows number of started educations per region and per year")
     st.dataframe(df_reset)
 
     st.markdown("## Trends per region")
-    region = st.selectbox("Choose region", df.columns)
+    region = st.selectbox("Choose region", df.columns) # df.columns = alla kolumner i df #skapar en dropdown meny
 
     region_stats = df[region].describe()
     cols = st.columns(4)
@@ -32,7 +33,7 @@ def layout():
     labels = ["min", "median", "max"]
     for col, stat, label in zip(cols, stats, labels):
         with col:
-            st.metric(label=label, value=region_stats[stat])
+            st.metric(label=label, value=f"{region_stats[stat]:.0f}")
 
     fig = px.line(
         data_frame=df,
