@@ -46,6 +46,8 @@ def layout():
     fig.update_layout(xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig)
     
+    read_css()
+    
 def read_css():
     css_path = Path(__file__).parents[1] / "style.css"
     
