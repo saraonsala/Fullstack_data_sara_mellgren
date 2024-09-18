@@ -49,11 +49,10 @@ def layout():
     read_css()
     
 def read_css():
-    css_path = Path(__file__).parents[1] / "style.css"
-    
-    with open("style.css") as css:
-        st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+    css_path = Path(__file__).parent / "style.css"
 
+    with open(css_path) as css:
+        st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
 
 if __name__ == "__main__": #__name__ är en specialvariabel som är satt till namnet på modulen som körts. Om modulen är huvudmodulen är __name__ satt till __main__.
     # print(read_data())
