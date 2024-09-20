@@ -166,3 +166,73 @@ cython_debug/
 
 #duckdb
 *.wal
+
+# duckdb
+*.wal
+*.DS_Store
+# dbeaver
+.dbeaver
+.project
+Lab_1/10_lab_overview/backend/cleaned_data/Innehåll/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Innehåll/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Datum/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Datum/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Enhetstyp/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Enhetstyp/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Enhetstyp/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Geografi/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Geografi/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Geografi/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Innehåll/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Innehållstyp/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Innehållstyp/Tabelldata.csv
+data/social_media_yt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Innehållstyp/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Operativsystem/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Operativsystem/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Operativsystem/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Prenumerationskälla/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Prenumerationskälla/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Prenumerationskälla/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Prenumerationsstatus/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Prenumerationsstatus/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Prenumerationsstatus/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Städer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Städer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Städer/Totalt.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Tittare/Tabelldata_alder.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Tittare/Tabelldata_kon.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Trafikkälla/Diagramdata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Trafikkälla/Tabelldata.csv
+Lab_1/10_lab_overview/backend/cleaned_data/Trafikkälla/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Datum 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Datum 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Enhetstyp 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Enhetstyp 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Enhetstyp 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Geografi 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Geografi 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Geografi 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Innehåll 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Innehåll 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Innehåll 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Innehållstyp 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Innehållstyp 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Innehållstyp 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Operativsystem 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Operativsystem 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Operativsystem 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Prenumerationskälla 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Prenumerationskälla 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Prenumerationskälla 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Prenumerationsstatus 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Prenumerationsstatus 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Prenumerationsstatus 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Städer 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Städer 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Städer 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+Lab_1/10_lab_overview/backend/raw_data/Tittare 2024-08-13_2024-09-10 AIgineer/Tabelldata_alder.csv
+Lab_1/10_lab_overview/backend/raw_data/Tittare 2024-08-13_2024-09-10 AIgineer/Tabelldata_kon.csv
+Lab_1/10_lab_overview/backend/raw_data/Trafikkälla 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
+Lab_1/10_lab_overview/backend/raw_data/Trafikkälla 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
+Lab_1/10_lab_overview/backend/raw_data/Trafikkälla 2024-08-13_2024-09-10 AIgineer/Totalt.csv
