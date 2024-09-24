@@ -1,18 +1,29 @@
 import duckdb
+from constants import DATABASE_PATH
 
+# implements context manager protocol
 class Database:
-    def __init__(self):
-        self.connection = duckdb.connect(':memory:')
-        self.cursor = self.connection.cursor()
+    def __init__(self, db_path) -> None:
+        self.db_path = db_path
+        self.connection = None
 
-    def execute(self, query):
-        return self.cursor.execute(query)
+    def __enter__(self):
+        self.connection = duckdb.connect(self.db_path)
+        return self
 
-    def fetchall(self):
-        return self.cursor.fetchall()
+    def query(self, query):
+        return self.connection.execute(query).fetchall()
 
-    def fetchone(self):
-        return self.cursor.fetchone()
+    def __exit__(self, exc_type, exc_value, traceback):
+        if self.connection:
+            self.connection.close()
 
-    def close(self):
-        self.cursor.close()
+class DatabaseDataFrame(Database):
+    def query(self, query):
+        return self.connection.execute(query).df()
+
+if __name__ == "__main__":
+    with DatabaseDataFrame(DATABASE_PATH) as db:
+        # queries 
+        query1 = db.query("SELECT * FROM information_schema.schemata;")
+        print(query1)
