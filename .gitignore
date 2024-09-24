@@ -236,3 +236,12 @@ Lab_1/10_lab_overview/backend/raw_data/Tittare 2024-08-13_2024-09-10 AIgineer/Ta
 Lab_1/10_lab_overview/backend/raw_data/Trafikkälla 2024-08-13_2024-09-10 AIgineer/Diagramdata.csv
 Lab_1/10_lab_overview/backend/raw_data/Trafikkälla 2024-08-13_2024-09-10 AIgineer/Tabelldata.csv
 Lab_1/10_lab_overview/backend/raw_data/Trafikkälla 2024-08-13_2024-09-10 AIgineer/Totalt.csv
+*.csv
+*.xlsx
+*.xls
+*.json
+*.txt
+*.pdf
+*.docx
+*.doc
+*.pptx
