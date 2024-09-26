@@ -245,3 +245,9 @@ Lab_1/10_lab_overview/backend/raw_data/Trafikkälla 2024-08-13_2024-09-10 AIgine
 *.docx
 *.doc
 *.pptx
+#duckdb
+*.wal
+*.DS_Store
+# dbeaver
+.dbeaver
+.project
