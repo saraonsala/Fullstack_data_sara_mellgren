@@ -6,6 +6,7 @@ from frontend.graphs import ViewsTrend
 content_kpi = ContentKPI()
 views_graph = ViewsTrend()
 
+
 # CSS för att sätta bakgrundsbild
 st.markdown(
     """
@@ -34,6 +35,9 @@ with col1:
 with col2:
     st.markdown("<p style='color: white;'>Views Trend</p>", unsafe_allow_html=True)
     views_graph.display_plot()
+
+def layout():
+    st.markdown("<p style='color: white;'>This is the layout function.</p>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     layout()
