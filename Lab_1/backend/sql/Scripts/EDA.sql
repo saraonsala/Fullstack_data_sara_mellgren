@@ -24,4 +24,5 @@ SELECT * FROM  innehall.diagramdata;-- ORDER BY "Visningstid (timmar)";
 
 SELECT STRFTIME('%Y-%m-%d', Datum), Visningar FROM innehall.totalt;
 
+desc;
 
