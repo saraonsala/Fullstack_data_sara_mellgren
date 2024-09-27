@@ -50,8 +50,10 @@ def layout():
         st.markdown("<p class='section-title'>Views Trend</p>", unsafe_allow_html=True)
         views_graph.display_plot()
 
-    # Lägg till en trevlig bild för att göra det visuellt intressantare
-    st.image("https://source.unsplash.com/random/800x400", caption="Din YouTube-resa visualiserad", use_column_width=True)
+# Visa en webp-bild i Streamlit
+st.image("C:/Users/saram/Klassprojekt/GitHub/Fullstack_data_sara_mellgren/Lab_1/0_0 (1).webp", caption="Example Image", use_column_width=True)
+
 
 if __name__ == "__main__":
     layout()
+  
