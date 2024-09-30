@@ -55,6 +55,28 @@ LEFT JOIN
     Innehåll_Totalt tot
 ON 
     d.Datum = tot.Datum);
+   
+-- ## Beskrivning
+   
+CREATE SCHEMA IF NOT EXISTS marts;
+CREATE TABLE IF NOT EXISTS marts.content_tittare AS 
+(     
+SELECT 
+    a.Tittare, 
+    a.Tabelldata_kon, 
+    b.Tabelldata_alder
+FROM 
+    tittardata a
+INNER JOIN 
+    tittardata b
+ON 
+    a.Tittare = b.Tittare
+WHERE 
+    a.Tabelldata_kon IS NOT NULL
+AND 
+    b.Tabelldata_alder IS NOT NULL);
+
+
   
    
 desc;
