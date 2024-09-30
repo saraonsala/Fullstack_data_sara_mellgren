@@ -24,5 +24,45 @@ SELECT * FROM  innehall.diagramdata;-- ORDER BY "Visningstid (timmar)";
 
 SELECT STRFTIME('%Y-%m-%d', Datum), Visningar FROM innehall.totalt;
 
+
+CREATE SCHEMA IF NOT EXISTS marts;
+
+CREATE TABLE IF NOT EXISTS marts.content_new AS 
+(
+SELECT 
+	STRFTIME('%Y-%m-%d'), 
+    d.Datum AS Diagram_Datum,
+    d.Innehall AS Diagram_Innehall,
+    d.Videotitel AS Diagram_Videotitel,
+    d.Publiceringstid_för_video AS Diagram_Publiceringstid,
+    d.Visningar AS Diagram_Visningar,
+    t.Videotitel AS Tabelldata_Videotitel,
+    t.Visningar AS Tabelldata_Visningar,
+    t.Visningstid_timmar,
+    t.Prenumeranter,
+    t.Exponeringar,
+    t.Klickfrekvens_för_exponeringar,
+    tot.Datum AS Totalt_Datum,
+    tot.Visningar AS Totalt_Visningar
+FROM 
+    Innehåll_Diagramdata d
+INNER JOIN 
+    Innehåll_Tabelldata t
+ON 
+    d.Innehåll = t.Innehåll 
+    AND d.Videotitel = t.Videotitel
+LEFT JOIN 
+    Innehåll_Totalt tot
+ON 
+    d.Datum = tot.Datum);
+  
+   
 desc;
+
+
+
+
+ 
+
+
 

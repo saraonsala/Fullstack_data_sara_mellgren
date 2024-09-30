@@ -49,3 +49,8 @@ SELECT
 	*
 FROM
 	marts.views_per_date;
+
+
+
+SELECT DISTINCT kategori_kolumn
+FROM youtube_data
