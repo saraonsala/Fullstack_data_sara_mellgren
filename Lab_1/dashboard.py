@@ -12,7 +12,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("C:/Users/saram/Klassprojekt/GitHub/Fullstack_data_sara_mellgren/Lab_1/0_0 (1).webp");
+        background-image: url("https://www.saramellgren.com/wp-content/uploads/2023/11/saram0214_an_astronaut_playing_with_jellyfish_fa601ffe-ecda-4a23-9977-f958ecb739e4-1.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

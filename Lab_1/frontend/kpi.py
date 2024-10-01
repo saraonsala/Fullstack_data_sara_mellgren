@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.query database import QueryDatabase
+from utils.query_database import QueryDatabase
 import duckdb
 
 class ContentKPI:
