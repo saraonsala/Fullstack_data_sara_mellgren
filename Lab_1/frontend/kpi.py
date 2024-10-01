@@ -8,7 +8,7 @@ class ContentKPI:
 
     def display_content(self):
         df = self._content
-        st.markdown("## KPIer för videor")
+        st.markdown("## KPIer för Kokchuns olika videos📹")
         st.markdown("### Totalt antal")
 
     
@@ -27,7 +27,7 @@ class ContentKPI:
         col4.metric("👁️ Exponeringar", round(kpis["Totalt antal exponeringar"]), delta_color="normal")
 
         # Visualisera data som tabell
-        st.markdown("### Data")
+        st.markdown("### Videotitlar")
         st.dataframe(df)
 
         # Diagram över datan

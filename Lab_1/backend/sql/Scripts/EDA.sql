@@ -60,19 +60,9 @@ ON
    
 CREATE SCHEMA IF NOT EXISTS marts;
 
-WITH 
-    tittare_table AS (SELECT * FROM enhetstyp.tabelldata OFFSET 1),
-    tittare_total AS (SELECT * FROM enhetstyp.totalt OFFSET 1)
-SELECT 
-    STRFTIME('%Y-%m-%d', tot.tittare) AS formatted_tittare_date, 
-    tot.tittare AS total_tittare, 
-    tab.tittare AS table_tittare
-FROM 
-    tittare_table AS tot
-LEFT JOIN 
-    tittare_total AS tab 
-ON 
-    tot.tittare = tab.tittare;
+
+
+
 
 desc;
 
