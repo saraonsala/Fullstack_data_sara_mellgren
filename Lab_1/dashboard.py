@@ -6,7 +6,6 @@ from frontend.graphs import ViewsTrend
 content_kpi = ContentKPI()
 views_graph = ViewsTrend()
 
-  
 # CSS för att sätta bakgrundsbild
 st.markdown(
     """

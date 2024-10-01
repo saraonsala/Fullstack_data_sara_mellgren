@@ -34,9 +34,6 @@ class ContentKPI:
         st.markdown("### Antal tittade minuter per video")
         st.bar_chart(df[["Visningstid_timmar"]])
 
-# Skapa en instans och visa KPI:erna
-content_kpi = ContentKPI()
-content_kpi.display_content()
 
 
 # create more KPIs here
