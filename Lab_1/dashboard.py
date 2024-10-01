@@ -23,21 +23,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("<h1 style='text-align: center; color: white;'>The teacher Kokchun, who wished he was a famous Youtuber</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: white;'>Den här dashboarden syftar till att utforska datan i min YouTubekanal.</p>", unsafe_allow_html=True)
-
-col1, col2 = st.columns([1, 1])
-
-with col1:
-    st.markdown("<p style='color: white;'>Content KPI</p>", unsafe_allow_html=True)
-    content_kpi.display_content()
-
-with col2:
-    st.markdown("<p style='color: white;'>Views Trend</p>", unsafe_allow_html=True)
-    views_graph.display_plot()
-
 def layout():
-    st.markdown("<p style='color: white;'>This is the layout function.</p>", unsafe_allow_html=True)
+    st.markdown("# Code by day, viral by night – the teacher who swapped bugs for subscribers")
+    st.markdown("Den här dashboarden syftar till att utforska datan i min youtubekanal")
+    # device_kpi.display_device_views()
+    # device_kpi.display_device_summary()
+    content_kpi.display_content()
+    views_graph.display_plot()
 
 if __name__ == "__main__":
     layout()

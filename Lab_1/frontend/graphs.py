@@ -12,5 +12,13 @@ class ViewsTrend:
         st.markdown("## Antal visningar under senaste månaden")
         st.plotly_chart(fig)
 
-# create more graphs here
+class GenderTrend:
+    def __init__(self) -> None:
+        self.df = QueryDatabase("SELECT * FROM marts.").df
+        print(self.df)
+
+    def display_plot(self):
+        fig = px.line(self.df, x="Datum", y="Visningar")
+        st.markdown("## Antal visningar under senaste månaden")
+        st.plotly_chart(fig)
 

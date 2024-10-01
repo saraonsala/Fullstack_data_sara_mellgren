@@ -59,26 +59,21 @@ ON
 -- ## Beskrivning
    
 CREATE SCHEMA IF NOT EXISTS marts;
-CREATE TABLE IF NOT EXISTS marts.content_tittare AS 
-(     
+
+WITH 
+    tittare_table AS (SELECT * FROM enhetstyp.tabelldata OFFSET 1),
+    tittare_total AS (SELECT * FROM enhetstyp.totalt OFFSET 1)
 SELECT 
-    a.Tittare, 
-    a.Tabelldata_kon, 
-    b.Tabelldata_alder
+    STRFTIME('%Y-%m-%d', tot.tittare) AS formatted_tittare_date, 
+    tot.tittare AS total_tittare, 
+    tab.tittare AS table_tittare
 FROM 
-    tittardata a
-INNER JOIN 
-    tittardata b
+    tittare_table AS tot
+LEFT JOIN 
+    tittare_total AS tab 
 ON 
-    a.Tittare = b.Tittare
-WHERE 
-    a.Tabelldata_kon IS NOT NULL
-AND 
-    b.Tabelldata_alder IS NOT NULL);
+    tot.tittare = tab.tittare;
 
-
-  
-   
 desc;
 
 

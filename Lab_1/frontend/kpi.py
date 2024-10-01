@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.query_database import QueryDatabase
-import duckdb
+import pandas as pd
 
 class ContentKPI:
     def __init__(self) -> None:
@@ -9,19 +9,35 @@ class ContentKPI:
     def display_content(self):
         df = self._content
         st.markdown("## KPIer för videor")
-        st.markdown("Nedan visas KPIer för totalt antal")
+        st.markdown("### Totalt antal")
 
+    
         kpis = {
-            "videor": len(df),
-            "visade timmar": df["Visningstid_timmar"].sum(),
-            "prenumeranter": df["Prenumeranter"].sum(),
-            "exponeringar": df["Exponeringar"].sum(),
+            "Antal videor": len(df),
+            "Totalt visade timmar": df["Visningstid_timmar"].sum(),
+            "Totalt antal prenumeranter": df["Prenumeranter"].sum(),
+            "Totalt antal exponeringar": df["Exponeringar"].sum(),
         }
 
-        for col, kpi in zip(st.columns(len(kpis)), kpis):
-            with col: 
-                st.metric(kpi, round(kpis[kpi]))
+        # Använd olika färger för att framhäva KPI:er
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("📹 Videor", kpis["Antal videor"], delta_color="inverse")
+        col2.metric("⏱️ Visade timmar", round(kpis["Totalt visade timmar"], 1), delta_color="normal")
+        col3.metric("👤 Prenumeranter", round(kpis["Totalt antal prenumeranter"]), delta_color="normal")
+        col4.metric("👁️ Exponeringar", round(kpis["Totalt antal exponeringar"]), delta_color="normal")
+
+        # Visualisera data som tabell
+        st.markdown("### Data")
         st.dataframe(df)
+
+        # Diagram över datan
+        st.markdown("### Antal tittade minuter per video")
+        st.bar_chart(df[["Visningstid_timmar"]])
+
+# Skapa en instans och visa KPI:erna
+content_kpi = ContentKPI()
+content_kpi.display_content()
+
 
 # create more KPIs here
 #class DeviceKPI:
