@@ -1,5 +1,6 @@
 import streamlit as st
-from utils.query_database import QueryDatabase
+from utils.query database import QueryDatabase
+import duckdb
 
 class ContentKPI:
     def __init__(self) -> None:
@@ -25,3 +26,4 @@ class ContentKPI:
 # create more KPIs here
 class DeviceKPI:
     pass 
+
