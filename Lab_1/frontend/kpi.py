@@ -24,6 +24,6 @@ class ContentKPI:
         st.dataframe(df)
 
 # create more KPIs here
-class DeviceKPI:
-    pass 
+#class DeviceKPI:
+#pass 
 
