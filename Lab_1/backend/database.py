@@ -1,5 +1,6 @@
 import duckdb
 
+# Database class with connection implemented as context manager
 class Database:
     """Database class with connection implemented as context manager"""
 
