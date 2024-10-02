@@ -35,8 +35,15 @@ class ContentKPI:
         st.bar_chart(df[["Visningstid_timmar"]])
 
 
+#class GenderKPI:
+       # def __init__(self) -> None:
+        #self._content = QueryDatabase("SELECT * FROM marts.content_view_time;").df
+    
+#def display_gender_kpi():
+    
 
-# create more KPIs here
-#class DeviceKPI:
-#pass 
+#device_kpi()
+    
+    
+
 

@@ -2,7 +2,7 @@ import streamlit as st
 from frontend.kpi import ContentKPI
 from frontend.graphs import ViewsTrend
 
-# device_kpi = DeviceKPI()
+#device_kpi = DeviceKPI() 
 content_kpi = ContentKPI()
 views_graph = ViewsTrend()
 

@@ -25,44 +25,35 @@ SELECT * FROM  innehall.diagramdata;-- ORDER BY "Visningstid (timmar)";
 SELECT STRFTIME('%Y-%m-%d', Datum), Visningar FROM innehall.totalt;
 
 
-CREATE SCHEMA IF NOT EXISTS marts;
+--##CREATE SCHEMA IF NOT EXISTS marts;
 
-CREATE TABLE IF NOT EXISTS marts.content_new AS 
+CREATE TABLE IF NOT EXISTS marts.videos_title AS 
 (
-SELECT 
-	STRFTIME('%Y-%m-%d'), 
-    d.Datum AS Diagram_Datum,
-    d.Innehall AS Diagram_Innehall,
-    d.Videotitel AS Diagram_Videotitel,
-    d.Publiceringstid_för_video AS Diagram_Publiceringstid,
-    d.Visningar AS Diagram_Visningar,
-    t.Videotitel AS Tabelldata_Videotitel,
-    t.Visningar AS Tabelldata_Visningar,
-    t.Visningstid_timmar,
-    t.Prenumeranter,
-    t.Exponeringar,
-    t.Klickfrekvens_för_exponeringar,
-    tot.Datum AS Totalt_Datum,
-    tot.Visningar AS Totalt_Visningar
-FROM 
-    Innehåll_Diagramdata d
-INNER JOIN 
-    Innehåll_Tabelldata t
-ON 
-    d.Innehåll = t.Innehåll 
-    AND d.Videotitel = t.Videotitel
-LEFT JOIN 
-    Innehåll_Totalt tot
-ON 
-    d.Datum = tot.Datum);
-   
--- ## Beskrivning
-   
-CREATE SCHEMA IF NOT EXISTS marts;
+SELECT
+	STRFTIME('%Y-%m-%d',
+	Datum) AS Datum ,
+	Videotitel,
+	Visningar
+FROM
+	innehall.diagramdata);
+
+
+SELECT * FROM marts.videos_title;
 
 
 
+--CREATE TABLE IF NOT EXISTS marts.gender_trend AS 
+(
+SELECT *
+	tittare,
+	Tittarnas kön,
+	Visningar,
+	Visnings
+FROM
+	tittare.tabelldata_alder);
+desc;
 
+SELECT * FROM marts.
 
 desc;
 
