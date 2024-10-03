@@ -26,5 +26,3 @@ class VideosTitle:
     def __init__(self) -> None:
         self.df = QueryDatabase("SELECT * FROM marts.videos_title").df
         print(self.df)
-   
-
