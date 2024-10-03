@@ -1,0 +1,45 @@
+SCHEMA               TABELL               KOLUMNNAMN
+Datum                Tabelldata           ['Datum' 'Visningar' 'Visningstid (timmar)' 'Genomsnittlig visningslängd']
+Datum                Totalt               ['Datum' 'Visningar']
+Enhetstyp            Diagramdata          ['Datum' 'Enhetstyp' 'Visningar']
+Enhetstyp            Tabelldata           ['Enhetstyp' 'Visningar' 'Visningstid (timmar)'
+ 'Genomsnittlig visningslängd']
+Enhetstyp            Totalt               ['Datum' 'Visningar']
+Geografi             Diagramdata          ['Datum' 'Geografi' 'Visningar']
+Geografi             Tabelldata           ['Geografi' 'Visningar' 'Visningstid (timmar)'
+ 'Genomsnittlig visningslängd']
+Geografi             Totalt               ['Datum' 'Visningar']
+Innehåll             Diagramdata          ['Datum' 'Innehåll' 'Videotitel' 'Publiceringstid för video' 'Visningar']
+Innehåll             Tabelldata           ['Innehåll' 'Videotitel' 'Publiceringstid för video' 'Visningar'
+ 'Visningstid (timmar)' 'Prenumeranter' 'Exponeringar'
+ 'Klickfrekvens för exponeringar (%)']
+Innehåll             Totalt               ['Datum' 'Visningar']
+Innehållstyp         Diagramdata          ['Datum' 'Innehållstyp' 'Visningar']
+Innehållstyp         Tabelldata           ['Innehållstyp' 'Visningar' 'Visningstid (timmar)'
+ 'Genomsnittlig visningslängd']
+Innehållstyp         Totalt               ['Datum' 'Visningar']
+Operativsystem       Diagramdata          ['Datum' 'Operativsystem' 'Visningar']
+Operativsystem       Tabelldata           ['Operativsystem' 'Visningar' 'Visningstid (timmar)'
+ 'Genomsnittlig visningslängd']
+Operativsystem       Totalt               ['Datum' 'Visningar']
+Prenumerationskälla  Diagramdata          ['Datum' 'Prenumerationskälla' 'Prenumeranter']
+Prenumerationskälla  Tabelldata           ['Prenumerationskälla' 'Prenumeranter' 'Nya prenumeranter'
+ 'Förlorade prenumeranter']
+Prenumerationskälla  Totalt               ['Datum' 'Prenumeranter']
+Prenumerationsstatus Diagramdata          ['Datum' 'Prenumerationsstatus' 'Visningar']
+Prenumerationsstatus Tabelldata           ['Prenumerationsstatus' 'Visningar' 'Visningstid (timmar)'
+ 'Genomsnittlig visningslängd']
+Prenumerationsstatus Totalt               ['Datum' 'Visningar']
+Städer               Diagramdata          ['Datum' 'Städer' 'Ort' 'Visningar']
+Städer               Tabelldata           ['Städer' 'Ort' 'Visningar' 'Visningstid (timmar)'
+ 'Genomsnittlig visningslängd']
+Städer               Totalt               ['Datum' 'Visningar']
+Tittare              Tabelldata_alder     ['Tittarnas kön' 'Visningar (%)' 'Genomsnittlig visningslängd'
+ 'Genomsnittlig procent som har visats (%)' 'Visningstid (timmar) (%)']
+Tittare              Tabelldata_kon       ['Tittarnas ålder' 'Visningar (%)' 'Genomsnittlig visningslängd'
+ 'Genomsnittlig procent som har visats (%)' 'Visningstid (timmar) (%)']
+Trafikkälla          Diagramdata          ['Datum' 'Trafikkälla' 'Visningar']
+Trafikkälla          Tabelldata           ['Trafikkälla' 'Visningar' 'Visningstid (timmar)'
+ 'Genomsnittlig visningslängd' 'Exponeringar'
+ 'Klickfrekvens för exponeringar (%)']
+Trafikkälla          Totalt               ['Datum' 'Visningar']
