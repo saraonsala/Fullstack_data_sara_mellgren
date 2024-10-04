@@ -2,10 +2,6 @@ from utils.query_database import QueryDatabase
 import plotly.express as px
 import streamlit as st
 
-# Skapa en sidotitel och layout
-st.set_page_config(page_title="Dashboard för Videodata", layout="wide")
-st.title("Analys av Videovisningar och Könsfördelning")
-
 # ViewsTrend klassen
 class ViewsTrend:
     def __init__(self) -> None:
@@ -65,21 +61,5 @@ class VideosTitle:
         # Visa i en tabell
         st.table(top_videos[["Titel", "Visningar"]])
 
-# Anropa funktionerna och visa i layout med två kolumner
-with st.sidebar:
-    st.header("Filtreringsalternativ")
-    view_type = st.radio("Välj datatyp", ["Visningar över tid", "Visningar per kön", "Videotitlar"], key="view_type_radio")
 
-# Layout för huvudsektionen
-if view_type == "Visningar över tid":
-    with st.container():
-        ViewsTrend().display_plot()
-
-elif view_type == "Visningar per kön":
-    with st.container():
-        GenderTrend().display_plot()
-
-else:
-    with st.container():
-        VideosTitle().display_plot()
 

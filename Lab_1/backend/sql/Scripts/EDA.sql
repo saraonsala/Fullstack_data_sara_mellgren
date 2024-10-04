@@ -25,7 +25,7 @@ SELECT * FROM  innehall.diagramdata;-- ORDER BY "Visningstid (timmar)";
 SELECT STRFTIME('%Y-%m-%d', Datum), Visningar FROM innehall.totalt;
 
 
---##CREATE SCHEMA IF NOT EXISTS marts;
+---CREATE SCHEMA IF NOT EXISTS marts;
 
 CREATE TABLE IF NOT EXISTS marts.videos_title AS 
 (
@@ -40,22 +40,19 @@ FROM
 
 SELECT * FROM marts.videos_title;
 
+ALTER TABLE tittare.tabelldata_alder RENAME COLUMN "Tittarnas kön" TO "Tittarnas kon"
+
+ALTER TABLE tittare.tabelldata_kon RENAME COLUMN "Tittarnas ålder" TO "Tittarnas alder"
 
 
---CREATE TABLE IF NOT EXISTS marts.gender_trend AS 
-(
-SELECT *
-	tittare,
-	Tittarnas kön,
-	Visningar,
-	Visnings
+CREATE TABLE IF NOT EXISTS marts.gender_trend AS 
+SELECT*
 FROM
-	tittare.tabelldata_alder);
-desc;
+	tittare.tabelldata_alder
+JOIN tittare.tabelldata_kon
+ON
+	tabelldata_alder."Tittarnas kon" = tabelldata_kon. "Tittarnas alder";
 
-SELECT * FROM marts.
-
-desc;
 
 
 
