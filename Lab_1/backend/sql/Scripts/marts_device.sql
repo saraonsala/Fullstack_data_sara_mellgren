@@ -26,3 +26,15 @@ FROM
 -- checks
 SELECT * FROM marts.device_views_date;
 SELECT * FROM marts.device_summary;
+
+SELECT Enhetstyp, count(*) total_rows, sum(Visningar) as total_visningar 
+from 
+enhetstyp.diagramdata group by Enhetstyp ;
+
+select * from enhetstyp.diagramdata d ;
+
+SELECT * EXCLUDE (Innehåll) FROM  innehall.tabelldata ORDER BY "Visningstid (timmar)" DESC OFFSET 1 LIMIT 5;
+
+SELECT * FROM  innehall.diagramdata;-- ORDER BY "Visningstid (timmar)";
+
+SELECT STRFTIME('%Y-%m-%d', Datum), Visningar FROM innehall.totalt;

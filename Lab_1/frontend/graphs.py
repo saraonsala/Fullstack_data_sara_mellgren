@@ -29,24 +29,26 @@ class ViewsTrend:
 # GenderTrend klassen
 class GenderTrend:
     def __init__(self) -> None:
-        self.df = QueryDatabase("SELECT * FROM marts.gender_views").df  # Uppdatera SQL-frågan för att inkludera könsdata
+        self.df = QueryDatabase("SELECT * FROM marts.gender_trend").df  # Uppdatera SQL-frågan för att inkludera könsdata
 
     def display_plot(self):
         # Filtrera efter kön med dropdown (lägg till unikt key)
-        gender_filter = st.selectbox("Välj kön", ["Alla", "Man", "Kvinna", "Övrigt"], key="gender_filter")
+        gender_filter = st.selectbox("Välj kön", ["Man", "Kvinna"], key="gender_filter")
         
         # Filtrering baserat på kön
         if gender_filter != "Alla":
-            filtered_df = self.df[self.df["Kön"] == gender_filter]
+            filtered_df = self.df[self.df['Tittarnas kon'] == gender_filter]
         else:
             filtered_df = self.df
 
         # Skapa linjediagram med Plotly
-        fig = px.line(filtered_df, x="Datum", y="Visningar", color="Kön", title="Visningar per Kön över Tid")
+        fig = px.line(filtered_df, x='Tittarnas alder', y="Genomsnittlig visningslängd", color='Tittarnas alder', title="Genomsnittlig visningslängd fördelat på kön.")
         fig.update_layout(autosize=True, plot_bgcolor='rgba(0,0,0,0)')
 
         # Visa grafen
         st.plotly_chart(fig, use_container_width=True)
+        #Tittarnas alder,Visningar (%),Genomsnittlig visningslängd,Genomsnittlig procent som har visats (%),Visningstid (timmar) (%)
+        #Tittarnas kön,Visningar (%),Genomsnittlig visningslängd,Genomsnittlig procent som har visats (%),Visningstid (timmar) (%)
 
 # VideosTitle klassen
 class VideosTitle:
