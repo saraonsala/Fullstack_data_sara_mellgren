@@ -7,29 +7,29 @@ from utils.query_database import QueryDatabase
 # GenderTrend klassen
 class GenderTrend:
     def __init__(self) -> None:
-        self.df = QueryDatabase("SELECT * FROM marts.gender_trend").df  # Uppdatera SQL-frågan för att inkludera könsdata
+        # Hämta data från databasen
+        self.df = QueryDatabase("SELECT * FROM marts.gender_trend").df
+        print(self.df.head())  # Kontrollera datan
 
     def display_plot(self):
-        # Filtrera efter kön med dropdown (lägg till unikt key)
+        # Dropdown för att välja kön
         gender_filter = st.selectbox("Välj kön", ["Man", "Kvinna"], key="gender_filter")
-        
-        # Filtrering baserat på kön
+
+        # Filtrera efter kön
         if gender_filter != "Alla":
-            filtered_df = self.df[self.df['Tittarnas kön'] == gender_filter]
+            filtered_df = self.df[self.df["Tittarnas kon"].str.lower() == gender_filter.lower()]
         else:
             filtered_df = self.df
 
-        # Skapa data för Matplotlib
-        x = filtered_df['Tittarnas ålder'].unique()
-        y = filtered_df.groupby('Tittarnas ålder')['Visningstid (timmar) (%)'].sum()
+        # Skapa linjediagram med befintliga kolumner
+        fig = px.line(filtered_df, x="Tittarnas alder", y="Visningar (%)", color="Tittarnas kon", title="Visningar per Kön och Ålder")
+        fig.update_layout(autosize=True, plot_bgcolor='rgba(0,0,0,0)')
 
-        # Skapa stapeldiagram med Matplotlib
-        fig, ax = plt.subplots()
-        ax.bar(x, y, width=1, edgecolor="white", linewidth=0.7)
-        ax.set(xlim=(min(x)-1, max(x)+1), xticks=np.arange(min(x), max(x)+1),
-               ylim=(0, max(y)+1), yticks=np.arange(0, max(y)+1))
+        # Visa grafen
+        st.plotly_chart(fig, use_container_width=True)
 
-                
+
+
 
 
 
