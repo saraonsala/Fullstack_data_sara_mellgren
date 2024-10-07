@@ -1,5 +1,3 @@
-desc;
-
 SELECT
 	*
 FROM
@@ -16,6 +14,7 @@ SELECT
 	"Visningstid (timmar)" AS Visningstid_timmar,
 	Exponeringar,
 	Prenumeranter,
+	
 	"Klickfrekvens för exponeringar (%)" AS "Klickfrekvens_exponering_%"
 FROM
 	innehall.tabelldata
@@ -54,3 +53,4 @@ FROM
 
 SELECT DISTINCT kategori_kolumn
 FROM youtube_data
+

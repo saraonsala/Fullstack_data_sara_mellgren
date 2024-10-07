@@ -11,12 +11,18 @@ class ContentKPI:
         st.markdown("## KPIer för Kokchuns olika videos📹")
         st.markdown("### Totalt antal")
 
-    
+        # Skapa en drop down meny för att välja en specifik video
+        video_titles = df["Videotitel"].unique()
+        selected_video = st.selectbox("Välj en video", video_titles)
+
+        # Filtrera data baserat på det valda videon
+        filtered_df = df[df["Videotitel"] == selected_video]
+
         kpis = {
-            "Antal videor": len(df),
-            "Totalt visade timmar": df["Visningstid_timmar"].sum(),
-            "Totalt antal prenumeranter": df["Prenumeranter"].sum(),
-            "Totalt antal exponeringar": df["Exponeringar"].sum(),
+            "Antal videor": len(filtered_df),
+            "Totalt visade timmar": filtered_df["Visningstid_timmar"].sum(),
+            "Totalt antal prenumeranter": filtered_df["Prenumeranter"].sum(),
+            "Totalt antal exponeringar": filtered_df["Exponeringar"].sum(),
         }
 
         # Använd olika färger för att framhäva KPI:er
@@ -28,11 +34,11 @@ class ContentKPI:
 
         # Visualisera data som tabell
         st.markdown("### Videotitlar")
-        st.dataframe(df)
+        st.dataframe(filtered_df)
 
         # Diagram över datan
         st.markdown("### Antal tittade minuter per video")
-        st.bar_chart(df[["Visningstid_timmar"]])
+        st.bar_chart(filtered_df[["Visningstid_timmar"]])
 
 
 

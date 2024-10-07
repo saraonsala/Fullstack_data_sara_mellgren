@@ -1,30 +1,8 @@
-from utils.query_database import QueryDatabase 
 import plotly.express as px
 import streamlit as st
-
-# ViewsTrend klassen
-class ViewsTrend:
-    def __init__(self) -> None:
-        self.df = QueryDatabase("SELECT * FROM marts.views_per_date").df
-
-    def display_plot(self):
-        # Dropdown för att filtrera datum (lägg till unikt key)
-        date_range = st.selectbox("Välj tidsperiod", ["Senaste månaden", "Senaste året", "Alla"], key="views_date_range")
-        
-        # Filtrering baserat på val
-        if date_range == "Senaste månaden":
-            filtered_df = self.df[self.df["Datum"] >= "2024-09-01"]
-        elif date_range == "Senaste året":
-            filtered_df = self.df[self.df["Datum"] >= "2023-10-01"]
-        else:
-            filtered_df = self.df
-        
-        # Plot med Plotly
-        fig = px.line(filtered_df, x="Datum", y="Visningar", title="Antal Visningar över Tid")
-        fig.update_layout(autosize=True, plot_bgcolor='rgba(0,0,0,0)')
-        
-        # Visa grafen
-        st.plotly_chart(fig, use_container_width=True)
+import matplotlib.pyplot as plt
+import numpy as np
+from utils.query_database import QueryDatabase
 
 # GenderTrend klassen
 class GenderTrend:
@@ -37,18 +15,23 @@ class GenderTrend:
         
         # Filtrering baserat på kön
         if gender_filter != "Alla":
-            filtered_df = self.df[self.df['Tittarnas kon'] == gender_filter]
+            filtered_df = self.df[self.df['Tittarnas kön'] == gender_filter]
         else:
             filtered_df = self.df
 
-        # Skapa linjediagram med Plotly
-        fig = px.line(filtered_df, x='Tittarnas alder', y="Genomsnittlig visningslängd", color='Tittarnas alder', title="Genomsnittlig visningslängd fördelat på kön.")
-        fig.update_layout(autosize=True, plot_bgcolor='rgba(0,0,0,0)')
+        # Skapa data för Matplotlib
+        x = filtered_df['Tittarnas ålder'].unique()
+        y = filtered_df.groupby('Tittarnas ålder')['Visningstid (timmar) (%)'].sum()
 
-        # Visa grafen
-        st.plotly_chart(fig, use_container_width=True)
-        #Tittarnas alder,Visningar (%),Genomsnittlig visningslängd,Genomsnittlig procent som har visats (%),Visningstid (timmar) (%)
-        #Tittarnas kön,Visningar (%),Genomsnittlig visningslängd,Genomsnittlig procent som har visats (%),Visningstid (timmar) (%)
+        # Skapa stapeldiagram med Matplotlib
+        fig, ax = plt.subplots()
+        ax.bar(x, y, width=1, edgecolor="white", linewidth=0.7)
+        ax.set(xlim=(min(x)-1, max(x)+1), xticks=np.arange(min(x), max(x)+1),
+               ylim=(0, max(y)+1), yticks=np.arange(0, max(y)+1))
+
+                
+
+
 
 # VideosTitle klassen
 class VideosTitle:
