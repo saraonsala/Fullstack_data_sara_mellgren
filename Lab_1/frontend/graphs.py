@@ -15,7 +15,7 @@ class GenderTrend:
         st.markdown("## Skillnaden mellan män och kvinnor som tittar på mina videor")   
 
         # Skapa linjediagram med befintliga kolumner
-        fig = px.line(self.df, x="Tittarnas ålder", y="Genomsnittlig visningslängd", color="Tittarnas kön", title="Visningar per Kön och Ålder")
+        fig = px.line(self.df, x="Tittarnas ålder", y="Tittarnas kön", color="Tittarnas kön", title="Visningar per Kön och Ålder")
         fig.update_layout(autosize=True, plot_bgcolor='rgba(0,0,0,0)')
         # Visa grafen
         st.plotly_chart(fig)
