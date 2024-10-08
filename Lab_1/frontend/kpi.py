@@ -36,6 +36,7 @@ class ContentKPI:
         st.markdown("### Videotitlar")
         st.dataframe(filtered_df)
 
+       
         # Diagram över datan
         st.markdown("### Antal tittade minuter per video")
         st.bar_chart(filtered_df[["Visningstid_timmar"]])
