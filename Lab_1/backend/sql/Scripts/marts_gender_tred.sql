@@ -2,22 +2,13 @@ CREATE TABLE IF NOT EXISTS marts.gender_trend AS
 SELECT
     tabelldata_kon."Tittarnas kon" AS "Tittarnas kön",
     tabelldata_alder."Tittarnas alder" AS "Tittarnas ålder",
-    tabelldata_alder."Genomsnittlig visningslängd"
+    tabelldata_alder."Genomsnittlig visningslangd" AS "Genomsnittlig visningslängd",
 FROM
     tittare.tabelldata_alder
-JOIN
+INNER JOIN
     tittare.tabelldata_kon
 ON
-    tabelldata_alder."Tittarnas kon" = tabelldata_kon."Tittarnas kon";
-
--- To view the results:
-
-SELECT
-    "Tittarnas kon" AS "Tittarnas kön",
-    "Tittarnas alder" AS "Tittarnas ålder",
-    "Genomsnittlig visningslängd"
-FROM
-    marts.gender_trend;
+    tabelldata_alder."Tittarnas kön" = tabelldata_kon."Tittarnas ålder";
 
 
 
