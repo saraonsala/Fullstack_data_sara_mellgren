@@ -32,8 +32,11 @@ def layout():
     # device_kpi.display_device_summary()
     content_kpi.display_content()
     #views_graph.display_plot()
-    gender_trend.display_plot()
+    # Skapa en instans av GenderTrend-klassen
     gender_trend = GenderTrend()
+    # Anropa display_plot-metoden för att visa grafen
+    gender_trend.display_plot()
+    
     
   
 
