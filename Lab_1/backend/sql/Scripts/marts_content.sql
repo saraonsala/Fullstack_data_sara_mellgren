@@ -54,3 +54,12 @@ FROM
 SELECT DISTINCT kategori_kolumn
 FROM youtube_data
 
+CREATE TABLE IF NOT EXISTS marts.content_view_time_clean AS 
+SELECT
+	"Videotitel",
+	"Visningar",
+FROM
+	marts.content_view_time;
+
+
+

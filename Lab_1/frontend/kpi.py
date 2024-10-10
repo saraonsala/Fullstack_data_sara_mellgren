@@ -31,6 +31,8 @@ class ContentKPI:
         col2.metric("⏱️ Visade timmar", round(kpis["Totalt visade timmar"], 1), delta_color="normal")
         col3.metric("👤 Prenumeranter", round(kpis["Totalt antal prenumeranter"]), delta_color="normal")
         col4.metric("👁️ Exponeringar", round(kpis["Totalt antal exponeringar"]), delta_color="normal")
+        
+        
 
 
 
