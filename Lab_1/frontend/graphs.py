@@ -4,29 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from utils.query_database import QueryDatabase
 
-# GenderTrend klassen
-class GenderTrend:
-    def __init__(self) -> None:
-        # Hämta data från databasen
-        self.df = QueryDatabase("SELECT * FROM marts.gender_trend").df
-        
-    def display_plot(self):
-        st.markdown("## Könsfördelning av mina videor")
-
-        # Gruppera datan för att summera antalet tittare per kön
-        gender_counts = self.df.groupby("Tittarnas kön").size().reset_index(name="Antal Tittare")
-        print(self.df)
-        # fig = px.bar(gender_counts, )
-        # Skapa ett cirkeldiagram för könsfördelning
-        fig = px.pie(gender_counts, names="Tittarnas kön", values="Antal Tittare", 
-                     title="Könsfördelning av Tittare")
-
-        # Lägg till interaktivitet och stilinställningar
-        fig.update_traces(textinfo="percent+label", hoverinfo="label+percent+value")
-        # fig.update_layout(autosize=True, plot_bgcolor='rgba(0,0,0,0)')
-        
-        # Visa grafen
-        st.plotly_chart(fig)
 
 # ViewsTrend klassen
     # class ViewsTrend:

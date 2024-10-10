@@ -9,7 +9,7 @@ class ContentKPI:
     def display_content(self):
         df = self._content
         st.markdown("## KPIer för Kokchuns olika videos📹")
-        st.markdown("### Totalt antal")
+        st.markdown("### Välj i rullgardinsmenyn för att se statistik per video.")
 
         # Skapa en drop down meny för att välja en specifik video
         video_titles = df["Videotitel"].unique()
@@ -32,19 +32,12 @@ class ContentKPI:
         col3.metric("👤 Prenumeranter", round(kpis["Totalt antal prenumeranter"]), delta_color="normal")
         col4.metric("👁️ Exponeringar", round(kpis["Totalt antal exponeringar"]), delta_color="normal")
 
-        # Visualisera data som tabell
-        st.markdown("### Videotitlar")
-        st.dataframe(filtered_df)
-
-       
-        # Diagram över datan
-        st.markdown("### Antal tittade minuter per video")
-        st.bar_chart(filtered_df[["Visningstid_timmar"]])
 
 
 
-
-            
+    # Diagram över datan
+   #st.markdown("### Antal tittade minuter per video")
+    #st.bar_chart(filtered_df[["Visningstid_timmar"]])           
     
 
 #device_kpi()

@@ -1,12 +1,12 @@
 import streamlit as st 
 from frontend.kpi import ContentKPI
 #from frontend.graphs import ViewsTrend
-from frontend.graphs import GenderTrend
+
 
 #device_kpi = DeviceKPI() 
 content_kpi = ContentKPI()
 #views_graph = ViewsTrend()
-gender_trend = GenderTrend()
+
 
 
 # CSS för att sätta bakgrundsbild
@@ -31,8 +31,8 @@ def layout():
     # device_kpi.display_device_views()
     # device_kpi.display_device_summary()
     content_kpi.display_content()
-    #views_graph.display_plot()
-    gender_trend.display_plot()
+   
+  
     
     
   
