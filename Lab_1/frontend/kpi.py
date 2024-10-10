@@ -32,7 +32,8 @@ class ContentKPI:
         col3.metric("👤 Prenumeranter", round(kpis["Totalt antal prenumeranter"]), delta_color="normal")
         col4.metric("👁️ Exponeringar", round(kpis["Totalt antal exponeringar"]), delta_color="normal")
         
-        
+
+
 
 
 

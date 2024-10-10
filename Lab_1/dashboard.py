@@ -27,7 +27,7 @@ st.markdown(
 
 def layout():
     st.markdown("# Code by day, viral by night – the teacher who swapped bugs for subscribers")
-    st.markdown("Den här dashboarden syftar till att utforska datan i min youtubekanal")
+    st.markdown("Den här dashboarden syftar till att utforska datan i min lärare Kokchuns youtubekanal")
     # device_kpi.display_device_views()
     # device_kpi.display_device_summary()
     content_kpi.display_content()
