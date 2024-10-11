@@ -1,12 +1,17 @@
 import streamlit as st 
 from frontend.kpi import ContentKPI
 from frontend.graphs import ViewsTrend
+import plotly.express as px
+import pandas as pd
+import sqlite3
+from frontend.graphs import DeviceDate
+from frontend.graphs import DeviceSummary
 
 
-#device_kpi = DeviceKPI() 
 content_kpi = ContentKPI()
 views_graph = ViewsTrend()
-
+device_views_date_df = DeviceDate()
+device_summary_df = DeviceSummary()
 
 
 # CSS för att sätta bakgrundsbild
@@ -28,21 +33,11 @@ st.markdown(
 def layout():
     st.markdown("# Code by day, viral by night – the teacher who swapped bugs for subscribers")
     st.markdown("Den här dashboarden syftar till att utforska datan i min lärare Kokchuns youtubekanal")
-    # device_kpi.display_device_views()
-    # device_kpi.display_device_summary()
     content_kpi.display_content()
     views_graph.display_plot()
+    device_views_date_df.display_plot()
+    device_summary_df.display_plot()
     
-  
- 
-    
-    
-   
-  
-    
-    
-  
-
 
 if __name__ == "__main__":
     layout()
