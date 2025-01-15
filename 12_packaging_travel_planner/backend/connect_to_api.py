@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import requests
+import pprint
 
 load_dotenv()
 
@@ -46,6 +47,15 @@ class ResRobot:
         response = requests.get(url)
         result = response.json()
         return result
+
+if __name__ == "__main__":
+    resrobot = ResRobot()
+    pprint(resrobot.timetable_arrival()["Arrival"][0])
+  
+    
+    # pprint(resrobot.trips())
+    # resrobot.access_id_from_location("Stockholm")
+    # pprint(resrobot.timetable_departure())
 
 
 # resrobot = ResRobot()
