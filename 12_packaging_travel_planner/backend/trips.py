@@ -66,7 +66,7 @@ class TripPlanner:
 
 
 if __name__ == "__main__":
-    data = TripData(
-        740000190,
-    )
+    data = TripPlanner(
+        740000190, 740000003
+    ) 
     print(data.next_available_trip()[["arrTime", "depTime", "time", "date"]])
