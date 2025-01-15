@@ -2,6 +2,7 @@ import folium
 from backend.trips import TripPlanner
 import streamlit as st
 from abc import ABC, abstractmethod
+from backend.connect_to_api import ResRobot
 
 
 class Maps(ABC):
